@@ -1,6 +1,6 @@
+console.log("Script is running...");
 $(document).ready(function() {
-  var currentDay = moment().format("dddd MMMM Do YYYY");
-
+  var currentDay = moment().format("dddd MMMM Do");
   console.log(currentDay);
 
   var displayDay = function() {
@@ -22,19 +22,21 @@ $(document).ready(function() {
   });
 
   function timeTracker() {
+    console.log("Inside timeTracker");
     // Get current hour in 12-hour format
     var currentHour = moment().format("h A");
 
     // Loop over time blocks
     $(".time-block").each(function() {
-      var blockTime = $(this).attr("id").split("hour")[1];
-
+      var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+      console.log(blockTime, currentHour)
       // Add appropriate color class to time block
-      if (blockTime < currentHour) {
+      if (blockTime < parseInt(currentHour)) {
+
         $(this).removeClass("future");
         $(this).removeClass("present");
         $(this).addClass("past");
-      } else if (blockTime === currentHour) {
+      } else if (blockTime === parseInt(currentHour)) {
         $(this).removeClass("past");
         $(this).removeClass("future");
         $(this).addClass("present");
@@ -64,6 +66,7 @@ $(document).ready(function() {
   // Call displayDay function
   displayDay();
 });
+
 
 
 
