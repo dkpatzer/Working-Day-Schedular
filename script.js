@@ -1,6 +1,7 @@
 $(document).ready(function() {
-  var currentDay = moment().format("dddd MMMM Do");
-  console.log(currentDay)
+  var currentDay = moment().format("dddd MMMM Do YYYY");
+
+  console.log(currentDay);
 
   var displayDay = function() {
     $("#currentDay").text(currentDay);
@@ -8,7 +9,7 @@ $(document).ready(function() {
   };
 
   // Create a moment object for the current hour
-  var currentHour = parseInt(moment().format("H"));
+  var currentHour = moment().format("h A");
 
   // saveBtn click listener
   $(".saveBtn").on("click", function() {
@@ -21,12 +22,12 @@ $(document).ready(function() {
   });
 
   function timeTracker() {
-    // Get current hour
-    var currentHour = dayjs().format("H");
+    // Get current hour in 12-hour format
+    var currentHour = moment().format("h A");
 
     // Loop over time blocks
     $(".time-block").each(function() {
-      var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+      var blockTime = $(this).attr("id").split("hour")[1];
 
       // Add appropriate color class to time block
       if (blockTime < currentHour) {
@@ -63,6 +64,8 @@ $(document).ready(function() {
   // Call displayDay function
   displayDay();
 });
+
+
 
 
 
