@@ -29,82 +29,64 @@
       <p id="currentDay" class="lead"></p>
     </header>
     
-<!-- Adding Time-Blocks -->
+    <!-- Adding Time-Blocks -->
 <div class="container-lg px-5">
   <div class="container">
     <div class="row">
       <div class="col-1 hour">8 AM</div>
-      <textarea class="col-10 description past"></textarea>
+      <textarea id="hour8" class="col-10 description past"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">9 AM</div>
-      <textarea class="col-10 description past"></textarea>
+      <textarea id="hour9" class="col-10 description past"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">10 AM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour10" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">11 AM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour11" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">12 PM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour12" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">1 PM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour13" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">2 PM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour14" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">3 PM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour15" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">4 PM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour16" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
     <div class="row">
       <div class="col-1 hour">5 PM</div>
-      <textarea class="col-10 description future"></textarea>
+      <textarea id="hour17" class="col-10 description future"></textarea>
       <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
     </div>
   </div>
-</div>
 
 
-
-      <!--Use class for "past", "present", and "future" to apply styles to the
-        time-block divs accordingly. The javascript will need to do this by
-        adding/removing these classes on each div by comparing the hour in the
-        id to the current hour. The html provided below is meant to be an example
-        demonstrating how the css provided can be leveraged to create the
-        desired layout and colors. The html below should be removed or updated
-        in the finished product. Remember to delete this comment once the
-        code is implemented.--> 
-    
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> <!-- Closing angle bracket was missing here -->
-        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
-        <script src="script.js"></script>
-      </body>
-    </html>
-  
-
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script
-    <script src="script.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

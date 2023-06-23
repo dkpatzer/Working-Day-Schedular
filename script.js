@@ -1,42 +1,45 @@
-console.log("Script is running...");
 $(document).ready(function() {
-  var currentDay = moment().format("dddd MMMM Do");
+  var currentDay = moment().format("dddd MMMM Do YYYY");
+
   console.log(currentDay);
 
   var displayDay = function() {
+    console.log("Reached displayDay()");
     $("#currentDay").text(currentDay);
-    console.log(currentDay);
+    console.log("Current day:", currentDay);
   };
 
-  // Create a moment object for the current hour
   var currentHour = moment().format("h A");
 
-  // saveBtn click listener
-  $(".saveBtn").on("click", function() {
+  console.log("Current hour:", currentHour);
+
+  $(document).on("click", ".saveBtn", function() {
+    console.log("Save button clicked!");
     // Get nearby values of the description in jQuery
     var text = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
 
     // Save text in local storage
     localStorage.setItem(time, text);
+    console.log("Reached timeTracker()");
   });
 
   function timeTracker() {
-    console.log("Inside timeTracker");
-    // Get current hour in 12-hour format
+    console.log("Reached timeTracker()");
     var currentHour = moment().format("h A");
-
-    // Loop over time blocks
+  
+    console.log("Current hour in 12-hour format:", currentHour);
+  
     $(".time-block").each(function() {
-      var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-      console.log(blockTime, currentHour)
-      // Add appropriate color class to time block
-      if (blockTime < parseInt(currentHour)) {
-
+      var blockTime = moment().hour(parseInt($(this).attr("id").split("hour")[1])).format("h A");
+  
+      console.log("Block time:", blockTime);
+  
+      if (moment(blockTime, "h A").isBefore(moment(currentHour, "h A"))) {
         $(this).removeClass("future");
         $(this).removeClass("present");
         $(this).addClass("past");
-      } else if (blockTime === parseInt(currentHour)) {
+      } else if (moment(blockTime, "h A").isSame(moment(currentHour, "h A"))) {
         $(this).removeClass("past");
         $(this).removeClass("future");
         $(this).addClass("present");
@@ -45,8 +48,10 @@ $(document).ready(function() {
         $(this).removeClass("past");
         $(this).addClass("future");
       }
+      
     });
   }
+  
 
   // Get item from local storage if any
   $("#hour8 .description").val(localStorage.getItem("hour8"));
@@ -60,11 +65,14 @@ $(document).ready(function() {
   $("#hour16 .description").val(localStorage.getItem("hour16"));
   $("#hour17 .description").val(localStorage.getItem("hour17"));
 
-  // Call timeTracker function
   timeTracker();
+  console.log("Reached the function calls");
 
-  // Call displayDay function
   displayDay();
+
+  // Call timeTracker() every minute
+setInterval(timeTracker, 60000);
+
 });
 
 
