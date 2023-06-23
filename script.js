@@ -52,19 +52,28 @@ $(document).ready(function() {
     })
 }
 
-  
-
   // Get item from local storage if any
-  $("#hour8 .description").val(localStorage.getItem("hour8"));
-  $("#hour9 .description").val(localStorage.getItem("hour9"));
-  $("#hour10 .description").val(localStorage.getItem("hour10"));
-  $("#hour11 .description").val(localStorage.getItem("hour11"));
-  $("#hour12 .description").val(localStorage.getItem("hour12"));
-  $("#hour13 .description").val(localStorage.getItem("hour13"));
-  $("#hour14 .description").val(localStorage.getItem("hour14"));
-  $("#hour15 .description").val(localStorage.getItem("hour15"));
-  $("#hour16 .description").val(localStorage.getItem("hour16"));
-  $("#hour17 .description").val(localStorage.getItem("hour17"));
+  var hour8Value = localStorage.getItem("hour8");
+  console.log("Retrieved value for hour8:", hour8Value);
+  var expectedHour8Value = "expected value for hour8";
+  if (hour8Value === expectedHour8Value) {
+    console.log("Retrieved value for hour8 matches the expected value.");
+  } else {
+    console.log("Retrieved value for hour8 does not match the expected value.");
+  }
+  $("#hour8 .description").val(hour8Value);
+
+  var hour9Value = localStorage.getItem("hour9");
+  console.log("Retrieved value for hour9:", hour9Value);
+  var expectedHour9Value = "expected value for hour9";
+  if (hour9Value === expectedHour9Value) {
+    console.log("Retrieved value for hour9 matches the expected value.");
+  } else {
+    console.log("Retrieved value for hour9 does not match the expected value.");
+  }
+  $("#hour9 .description").val(hour9Value);
+
+  // Repeat the above steps for each hour
 
   timeTracker();
   console.log("Reached the function calls");
@@ -72,8 +81,7 @@ $(document).ready(function() {
   displayDay();
 
   // Call timeTracker() every minute
-// setInterval(timeTracker, 60000);
-
+  // setInterval(timeTracker, 60000);
 });
 
 
