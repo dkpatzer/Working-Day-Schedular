@@ -1,4 +1,3 @@
-
 # Working-Day-Scheduler
 
 ## Description
@@ -52,17 +51,18 @@ The next line calls the `timeTracker` function, which was defined earlier. It en
 
 ## Screenshots
 
-![Screenshot of starting page](https://github.com/dkpatzer/WorkDaySchedular/blob/main/assets/images/Screenshot%20(147).png)
+![Screenshot of starting page](https://github.com/dkpatzer/Working-Day-Schedular/blob/main/images/Screenshot%20(147).png)
 
 ![Screenshot of time blocks](https://github.com/dkpatzer/WorkDaySchedular/blob/main/assets/images/Screenshot%20(148).png)
 
-## Credits and Sources
+Building this app was useful in gaining experience and undertanding of third party APIs. I learned how to use the Moment.js library to get the current date and time, and how to use it to format dates and times. I also learned how to use the localStorage object to store data in the browser's local storage. I learned how to use jQuery to select HTML elements and manipulate their attributes and content. I also learned how to use jQuery's event listeners to set up click events for elements. Finally, I learned how to use jQuery's each method to loop over elements and perform operations on them.
 
+
+## Credits and Sources
 The Work Day Scheduler was developed by David Patzer as part of the NU coding bootcamp. I obtained information from many sources to help in building this app. Sources include w3collective, MDN Web Docs, Stack Overflow, and the jQuery documentation. https://chat.openai.com/ was used to check text. I reviewed this code https://github.com/ewirtz3/work-day-scheduler. I reviewed information from the MDN guide on Third Party APIs. https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs. Reviewing documentation from https://jquery.com/ was critical. I utilized the jQuery tutorial from W3 schools https://www.w3schools.com/jquery/. The Day.js site was also critical https://day.js.org/.
 
 ## Acknowledgments
 
-Here are some of the resources I relied on to create this project:
 
 - w3collective: For providing helpful tutorials and code examples.
 - MDN Web Docs: For comprehensive documentation on web technologies.
