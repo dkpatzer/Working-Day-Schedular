@@ -25,32 +25,33 @@ $(document).ready(function() {
   });
 
   function timeTracker() {
-    console.log("Reached timeTracker()");
-    var currentHour = moment().format("h A");
-  
-    console.log("Current hour in 12-hour format:", currentHour);
-  
-    $(".time-block").each(function() {
-      var blockTime = moment().hour(parseInt($(this).attr("id").split("hour")[1])).format("h A");
-  
-      console.log("Block time:", blockTime);
-  
-      if (moment(blockTime, "h A").isBefore(moment(currentHour, "h A"))) {
-        $(this).removeClass("future");
-        $(this).removeClass("present");
-        $(this).addClass("past");
-      } else if (moment(blockTime, "h A").isSame(moment(currentHour, "h A"))) {
-        $(this).removeClass("past");
-        $(this).removeClass("future");
-        $(this).addClass("present");
-      } else {
-        $(this).removeClass("present");
-        $(this).removeClass("past");
-        $(this).addClass("future");
-      }
-      
-    });
-  }
+    //get current number of hours.
+    var timeNow = moment().hour();
+
+    // loop over time blocks
+    $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+    })
+}
+
   
 
   // Get item from local storage if any
@@ -71,7 +72,7 @@ $(document).ready(function() {
   displayDay();
 
   // Call timeTracker() every minute
-setInterval(timeTracker, 60000);
+// setInterval(timeTracker, 60000);
 
 });
 
